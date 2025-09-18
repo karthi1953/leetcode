@@ -1,4 +1,4 @@
-Find the smallest letter greater than target
+#Find Smallest Letter Greater Than Target
 class Solution {
     public char nextGreatestLetter(char[] letters, char t) {
         int s=0;
