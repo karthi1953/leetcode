@@ -1,3 +1,47 @@
+#Find First and Last Position of Element in Sorted Array - LeetCode
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+
+        int[] ans={-1,-1};
+
+        int start=searching(nums,target,true);
+        int end=searching(nums,target,false);
+        ans[0]=start;
+        ans[1]=end;
+        return ans;
+        
+        
+    }
+    int searching(int[]nums,int target,boolean start){
+
+        int s=0;
+        int e=nums.length-1;
+        int singleans=-1;
+
+        while(s<=e){
+            int mid=(s+e)/2;
+            if(nums[mid]==target){
+                singleans=mid;
+                if(start){
+                    e=mid-1;
+
+                }else{
+                    s=mid+1;
+
+                }
+
+            }
+            if(nums[mid]<target){
+                s=mid+1;
+            }
+             if(nums[mid]>target){
+                e=mid-1;
+            }
+        }
+        return singleans;
+
+        }
+}
 #Reverse integer
 class Solution {
     public int reverse(int x) {
