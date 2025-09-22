@@ -1,3 +1,27 @@
+# Score of a string
+class Solution {
+
+    public int scoreOfString(String s) {
+        int ans=0;
+        int[] arr=new int[s.length()];
+        for(int i=0;i<s.length();i++){
+        char ss=s.charAt(i);
+        arr[i]=ss;
+
+        }
+        for(int i=0;i<s.length()-1;i++){
+
+                int val=arr[i]-arr[i+1];
+                if(val<0){
+                    val=val*(-1);
+                }
+                ans=ans+val;
+             
+
+        }
+        return ans;
+    }
+}
 # Length of an argument
 var argumentsLength = function(...args) {
         return args.length;
