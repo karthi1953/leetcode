@@ -1,3 +1,21 @@
+# Concatenation of Array
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        int[] arr=new int[nums.length*2];
+        for(int i=0;i<2;i++){
+            for(int j=0;j<nums.length;j++){
+                if(i==0){
+                arr[j]=nums[j];
+
+                }else{
+                    arr[nums.length+j]=nums[j];
+                }
+        }
+        
+        }
+        return arr;
+    }
+}
 # Score of a string
 class Solution {
 
