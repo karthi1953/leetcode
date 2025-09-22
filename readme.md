@@ -1,4 +1,10 @@
-#Roman to Integer
+# Length of an argument
+var argumentsLength = function(...args) {
+        return args.length;
+
+    
+};
+# Roman to Integer
 class Solution {
     public int romanToInt(String s) {
     int ans=0;
