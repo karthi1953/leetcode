@@ -1,3 +1,18 @@
+
+# find closest person 
+class Solution {
+    public int findClosest(int x, int y, int z) {
+
+        if(Math.abs(z-x)>Math.abs(z-y)){
+            return 2;
+        }else if(Math.abs(z-x)<Math.abs(z-y)){
+                        return 1;
+
+        }else{
+            return 0;
+        }
+    }
+}
 # Build Array from Permutation
 class Solution {
     public int[] buildArray(int[] nums) {
