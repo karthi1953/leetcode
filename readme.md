@@ -1,4 +1,3 @@
-
 # find closest person 
 class Solution {
     public int findClosest(int x, int y, int z) {
