@@ -1,3 +1,79 @@
+
+# Search in Rotated Sorted Array II 
+class Solution {
+    public boolean search(int[] arr, int target) {
+        int peak = findPeakElement(arr);
+
+
+        int first= binary(arr,target,0,peak);
+        boolean ans=false;
+        if(first==-1){
+        first = binary(arr,target,peak+1,arr.length-1);
+
+        }
+        if(first!=-1){
+            ans=true;
+        }else{
+            ans=false;
+        }
+        return ans;
+    }
+    
+     int findPeakElement(int[] arr) {
+        int start=0;
+        int mid=0;
+        int end=arr.length-1;
+        while(start<=end){
+            mid=(start+end)/2;
+            if(mid<end&&arr[mid]>arr[mid+1]){
+                return mid;
+            }
+            if(mid>start&&arr[mid-1]>arr[mid]){
+                return mid-1;
+            }
+            if(start<end&&arr[mid]==arr[start]&&arr[mid]==arr[end]){
+                if(end>start&&arr[start]>arr[start+1]){
+                    return start;
+                }
+                start++;
+                if(start<end&&arr[end-1]>arr[end]){
+                    return end-1;
+                }
+                end--;
+            }
+
+            else if (arr[start] < arr[mid] || (arr[start] == arr[mid] && arr[mid] > arr[end])) {
+            start = mid + 1;
+        } else {
+            end = mid - 1;
+        }
+        }
+        return arr.length-1;
+        
+        
+    }   
+    int binary(int[] arr,int tar,int s,int e){
+        int start=s;
+        int end=e;
+        while(start<=end){
+            int mid=(start+end)/2;
+            if(arr[mid]==tar){
+                return mid;
+
+            }
+            if(arr[mid]>tar){
+                end=mid-1;
+            }else if(arr[mid]<tar){
+                start=mid+1;
+            }
+        }
+        return -1;
+
+    
+}
+
+
+}
 # find closest person 
 class Solution {
     public int findClosest(int x, int y, int z) {
