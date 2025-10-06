@@ -1,3 +1,32 @@
+# Merge sorted array (brute force poor code)
+class Solution {
+    public void merge(int[] n1, int m, int[] n2, int n) {
+                int count=0;
+        for(int i=m;i<n1.length;i++){
+            if(n1[i]==0){
+                n1[i]=n2[count];
+                count++;
+              
+            }
+        }
+       
+        for(int i=0;i<n1.length-1;i++){
+
+            for(int j=i+1;j<n1.length;j++){
+                if(n1[i]>n1[j]){
+                    int temp=n1[i];
+                    n1[i]=n1[j];
+                    n1[j]=temp;
+                }
+
+            }
+        }
+            
+
+        }
+        
+    }
+    
 # Split array largest sum
 
 class Solution {
