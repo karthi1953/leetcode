@@ -1,3 +1,21 @@
+# Move zeroes 
+class Solution {
+    public int[] moveZeroes(int[] n1) {
+
+           for(int i=0;i<n1.length-1;i++){
+
+            for(int j=0;j<n1.length-i-1;j++){
+            if(n1[j]==0){
+                int temp=n1[j+1];
+                n1[j+1]=n1[j];
+                n1[j]=temp;
+            }
+            
+           }
+           }
+        return n1;
+    }
+}
 # Merge sorted array (brute force poor code)
 class Solution {
     public void merge(int[] n1, int m, int[] n2, int n) {
