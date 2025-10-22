@@ -1,3 +1,34 @@
+# Missing Number
+import java.util.Arrays;
+
+class Solution {
+    public int missingNumber(int[] nums) {
+        cyclic(nums);
+
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=i){
+                return i;
+            }
+        }
+
+        return nums.length;
+    }
+
+    public void cyclic(int[] nums){
+        int i=0;
+        while(i<nums.length){
+            int corr=nums[i];
+
+            if(nums[i]<nums.length&&nums[corr] !=nums[i]){
+                int temp = nums[corr];
+                nums[corr]=nums[i];
+                nums[i]=temp;
+            }else{
+                i++;
+            }
+        }
+    }
+}
 # Final Value of Variable After Performing Operations 
 class Solution {
     public int finalValueAfterOperations(String[] operations) {
