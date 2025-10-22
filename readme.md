@@ -1,4 +1,21 @@
-
+# Final Value of Variable After Performing Operations 
+class Solution {
+    public int finalValueAfterOperations(String[] operations) {
+        int k=0;
+        for(int i=0;i<operations.length;i++ ){
+            if(operations[i].equals("--X")){
+                k--;
+            }else if(operations[i].equals("X++")){
+                k++;
+            }else if(operations[i].equals("++X")){
+                k++;
+             } else if(operations[i].equals("X--")){
+                k--;
+             }
+        }
+        return k;
+    }
+}
 # Find the Maximum Achievable Number
 
 class Solution {
