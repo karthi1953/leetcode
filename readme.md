@@ -1,3 +1,26 @@
+# Search a 2D Matrix
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+
+        int row=0;
+        int rowend=matrix.length-1;
+        int col=0;
+        int colend=matrix[0].length-1;
+        while(row<=rowend&&col<=colend){
+            if(matrix[row][colend]==target){
+                return true;
+            }else if(matrix[row][colend]>target){
+                colend=colend-1;
+            }else if(matrix[row][colend]<target){
+                row=row+1;
+            }
+        }
+
+
+            return false;
+
+    }
+}
 # Find all duplicates in an Array
 class Solution {
     public List<Integer> findDuplicates(int[] nums) {
