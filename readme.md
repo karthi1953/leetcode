@@ -1,3 +1,30 @@
+# Find all duplicates in an Array
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        ArrayList arr=new ArrayList<> (); 
+        int i=0; 
+        while(i<nums.length){
+         int cor=nums[i]-1;
+          if(nums[i]!=nums[cor]){
+                int temp=nums[i];
+                nums[i]=nums[cor];
+                nums[cor]=temp;
+
+            }else{
+                i++;
+            }
+        }
+        for(int j=0;j<nums.length;j++){
+            if(nums[j]!=j+1){
+                arr.add(nums[j]);
+            }
+            
+        
+    }
+    return arr;
+        
+    }
+}
 # Find the Duplicate Number
 class Solution {
     public int findDuplicate(int[] nums) {
