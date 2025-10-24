@@ -1,3 +1,26 @@
+# Find minimum in Rotated sorted array (Wrong method)
+class Solution {
+    public int findMin(int[] nums) {
+        bubblesort(nums);
+        return nums[0];
+
+    }
+
+    public void bubblesort(int[] nums){
+        for(int k=0;k<nums.length;k++){
+
+        
+        for(int j=0;j<nums.length-k-1;j++){
+            if(nums[j]>nums[j+1]){
+                int temp=nums[j];
+                nums[j]=nums[j+1];
+                nums[j+1]=temp;
+            }
+        }
+        }
+
+    }
+}
 # Search a 2D Matrix
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
