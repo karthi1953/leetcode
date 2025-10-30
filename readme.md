@@ -1,3 +1,33 @@
+# Set mismatch
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+
+        int j=0;
+
+        while(j<nums.length){
+            int cor=nums[j]-1;
+            if(nums[j]!=nums[cor]){
+               int temp=nums[cor];
+                nums[cor]=nums[j];
+                nums[j]=temp;
+            }else{
+                j++;
+            }
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) {
+                return new int[]{nums[i], i + 1};
+            }
+        }
+
+        return new int[]{-1,-1};
+
+        
+
+    }
+}
+
 # Find minimum in Rotated sorted array (Wrong method)
 class Solution {
     public int findMin(int[] nums) {
