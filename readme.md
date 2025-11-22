@@ -1,3 +1,21 @@
+# Find Minimum Operations to Make All Elements Divisible by Three
+class Solution {
+    public int minimumOperations(int[] nums) {
+        int count=0;
+        for(int val: nums){
+            if(val%3!=0){
+                if(val<3){
+                    val=val+1;
+                    count++;
+                }else{
+                    val=val-1;
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+}
 # Count Operations to Obtain Zero
 class Solution {
     public int countOperations(int num1, int num2) {
