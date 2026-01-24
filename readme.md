@@ -1,3 +1,57 @@
+# intersection of Two arrays
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        //nums1=[1,2,2,1]
+        //nums2=[2,2]
+        int[] shortArray;
+        int[] longArray;
+        int index=0;
+        if(nums1.length>nums2.length){
+            shortArray=nums2;
+            longArray=nums1;
+        }else{
+            shortArray=nums1;
+            longArray=nums2;
+        }
+        int[] finalArray=new int[shortArray.length];
+        for(int i=0;i<finalArray.length;i++){
+            finalArray[i]=-1;
+        }
+        for(int i=0;i<shortArray.length;i++){
+
+            boolean isAvailable=linearSearch(longArray,shortArray[i]);
+            if(isAvailable){
+            boolean isAvailable2=linearSearch(finalArray,shortArray[i]);
+                if(!isAvailable2){
+                    finalArray[index]=shortArray[i];
+                    index=index+1;
+                }
+            }
+        }
+       int[] result= new int[index];
+       result=resultMaker(result,finalArray);
+        return result;
+    }
+
+    public boolean linearSearch(int[] arr,int target){
+        
+
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]==target){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int[] resultMaker(int[] result,int[]finalArray){
+        for(int i=0;i<result.length;i++){
+            result[i]=finalArray[i];
+        }
+
+        return result;
+    }
+}
 # Plus one
 class Solution {
     public int[] plusOne(int[] d) {
