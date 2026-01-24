@@ -1,3 +1,26 @@
+# Valid perfect square
+class Solution {
+    public boolean isPerfectSquare(int num) {
+        //x=8
+        int start=1;
+        int end=num;
+        boolean ans=false;
+
+        while(start<=end){
+        int mid = end + (start - end) / 2;
+
+            if((long)mid*mid==num){
+                return true;
+            }else if((long)mid*mid<num){
+                start=mid+1;
+                }else{
+                end=mid-1;
+            }
+        }
+        return ans;
+    }
+
+}
 # sqrt(x)
 class Solution {
     public int mySqrt(int x) {
